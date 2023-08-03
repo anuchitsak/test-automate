@@ -1,0 +1,2601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230803 13:09:31.773" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Automate Ui" source="C:\Users\62160116\Documents\GitHub\test-automate\test_automate_ui.robot">
+<test id="s1-t1" name="test_automate_001 :: File Upload Success" line="7">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:09:33.861" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "ignoreDefaultArgs": false, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\62160116\\Documents\\GitHub\\test-automate\\browser\\traces\\6b446997-4038-4be0-82d8-ad62e83057b5"}</msg>
+<msg timestamp="20230803 13:09:35.759" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"ignoreDefaultArgs":false,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\62160116\\Documents\\GitHub\\test-automate\\browser\\traces\\6b446997-4038-4be0-82d8-ad62e83057b5"}</msg>
+<status status="PASS" starttime="20230803 13:09:33.859" endtime="20230803 13:09:35.759"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:09:42.515" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:09:42.515" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:09:35.760" endtime="20230803 13:09:42.516"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20230803 13:09:42.534" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20230803 13:09:42.516" endtime="20230803 13:09:42.534"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:09:42.535" endtime="20230803 13:09:42.539"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:33.855" endtime="20230803 13:09:42.540"/>
+</kw>
+<kw name="Go To File Upload" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="File Upload"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:42.545" endtime="20230803 13:09:43.160"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//form[@enctype="multipart/form-data"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:43.469" level="INFO">Waited for Element with selector //form[@enctype="multipart/form-data"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:43.161" endtime="20230803 13:09:43.469"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:42.542" endtime="20230803 13:09:43.470"/>
+</kw>
+<kw name="Upload File" library="common_ui">
+<arg>test.txt</arg>
+<kw name="Upload File By Selector" library="Browser">
+<arg>//input[@id="file-upload"]</arg>
+<arg>${file}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from `path` to file input element matched by selector.</doc>
+<status status="PASS" starttime="20230803 13:09:43.473" endtime="20230803 13:09:43.535"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:43.471" endtime="20230803 13:09:43.536"/>
+</kw>
+<kw name="Click Button Upload" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//input[@id="file-submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:43.540" endtime="20230803 13:09:43.949"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:43.539" endtime="20230803 13:09:43.950"/>
+</kw>
+<kw name="Validate Upload" library="common_ui">
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id="uploaded-files"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:44.059" level="INFO">Waited for Element with selector //*[@id="uploaded-files"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:43.955" endtime="20230803 13:09:44.060"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:43.953" endtime="20230803 13:09:44.060"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:33.834" endtime="20230803 13:09:44.061"/>
+</test>
+<test id="s1-t2" name="test_automate_002 :: File Upload Not Select File" line="13">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:09:44.150" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:09:44.155" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:09:44.155" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:09:44.150" endtime="20230803 13:09:44.155"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:09:48.642" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:09:48.642" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:09:44.156" endtime="20230803 13:09:48.642"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:09:48.643" endtime="20230803 13:09:48.644"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:09:48.644" endtime="20230803 13:09:48.645"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:44.149" endtime="20230803 13:09:48.645"/>
+</kw>
+<kw name="Go To File Upload" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="File Upload"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:48.647" endtime="20230803 13:09:49.141"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//form[@enctype="multipart/form-data"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:49.432" level="INFO">Waited for Element with selector //form[@enctype="multipart/form-data"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:49.142" endtime="20230803 13:09:49.432"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:48.646" endtime="20230803 13:09:49.433"/>
+</kw>
+<kw name="Click Button Upload" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//input[@id="file-submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:49.438" endtime="20230803 13:09:49.843"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:49.435" endtime="20230803 13:09:49.843"/>
+</kw>
+<kw name="Validate Upload Error" library="common_ui">
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h1[text()="Internal Server Error"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:49.897" level="INFO">Waited for Element with selector //h1[text()="Internal Server Error"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:49.848" endtime="20230803 13:09:49.897"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:49.846" endtime="20230803 13:09:49.897"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:44.144" endtime="20230803 13:09:49.898"/>
+</test>
+<test id="s1-t3" name="test_automate_003 :: Multiple Windows Open New Window" line="18">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:09:49.974" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:09:49.978" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:09:49.978" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:09:49.973" endtime="20230803 13:09:49.978"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:09:54.290" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:09:54.291" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:09:49.979" endtime="20230803 13:09:54.292"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:09:54.293" endtime="20230803 13:09:54.294"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:09:54.294" endtime="20230803 13:09:54.295"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:49.973" endtime="20230803 13:09:54.296"/>
+</kw>
+<kw name="Go To Multiple Window" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="Multiple Windows"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:54.299" endtime="20230803 13:09:54.920"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//div[@id="content"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:54.959" level="INFO">Waited for Element with selector //div[@id="content"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:54.921" endtime="20230803 13:09:54.960"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:54.298" endtime="20230803 13:09:54.960"/>
+</kw>
+<kw name="New Window" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[@href="/windows/new"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:54.962" endtime="20230803 13:09:55.062"/>
+</kw>
+<kw name="Switch Page" library="Browser">
+<arg>NEW</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<msg timestamp="20230803 13:09:55.065" level="INFO">Switching to page NEW,context CURRENT, browser CURRENT</msg>
+<msg timestamp="20230803 13:09:55.402" level="INFO">Activated new page page=bd437010-d815-49f8-80a9-396616ae4009</msg>
+<status status="PASS" starttime="20230803 13:09:55.062" endtime="20230803 13:09:55.402"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:54.961" endtime="20230803 13:09:55.403"/>
+</kw>
+<kw name="Validate New Window" library="common_ui">
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h3[text()="New Window"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:09:55.463" level="INFO">Waited for Element with selector //h3[text()="New Window"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:09:55.405" endtime="20230803 13:09:55.463"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:55.404" endtime="20230803 13:09:55.463"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:49.966" endtime="20230803 13:09:55.464"/>
+</test>
+<test id="s1-t4" name="test_automate_004 :: Sort Data Tables Sort Table1 Column Last Name" line="23">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:09:55.549" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:09:55.552" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:09:55.552" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:09:55.549" endtime="20230803 13:09:55.552"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:09:59.525" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:09:59.526" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:09:55.553" endtime="20230803 13:09:59.526"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:09:59.527" endtime="20230803 13:09:59.529"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:09:59.530" endtime="20230803 13:09:59.531"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:55.548" endtime="20230803 13:09:59.532"/>
+</kw>
+<kw name="Go To Sort Data Table" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="Sortable Data Tables"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:09:59.534" endtime="20230803 13:10:00.134"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h3[text()="Data Tables"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:10:00.316" level="INFO">Waited for Element with selector //h3[text()="Data Tables"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:10:00.135" endtime="20230803 13:10:00.317"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:59.533" endtime="20230803 13:10:00.317"/>
+</kw>
+<kw name="Sort Data" library="common_ui">
+<arg>1</arg>
+<arg>table1</arg>
+<kw name="Get Column" library="common_ui">
+<var>${begin}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.342" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.321" endtime="20230803 13:10:00.342"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:00.344" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:00.342" endtime="20230803 13:10:00.344"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.415" level="INFO">Text: 'Smith'</msg>
+<msg timestamp="20230803 13:10:00.415" level="INFO">${text} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.347" endtime="20230803 13:10:00.415"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.416" level="INFO">${new data} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.416" endtime="20230803 13:10:00.416"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.416" endtime="20230803 13:10:00.417"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.346" endtime="20230803 13:10:00.417"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.439" level="INFO">Text: 'Bach'</msg>
+<msg timestamp="20230803 13:10:00.439" level="INFO">${text} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.417" endtime="20230803 13:10:00.439"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.440" level="INFO">${new data} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.440" endtime="20230803 13:10:00.440"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.440" endtime="20230803 13:10:00.441"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.417" endtime="20230803 13:10:00.441"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.462" level="INFO">Text: 'Doe'</msg>
+<msg timestamp="20230803 13:10:00.462" level="INFO">${text} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.441" endtime="20230803 13:10:00.462"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.463" level="INFO">${new data} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.463" endtime="20230803 13:10:00.463"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.463" endtime="20230803 13:10:00.463"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.441" endtime="20230803 13:10:00.464"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.483" level="INFO">Text: 'Conway'</msg>
+<msg timestamp="20230803 13:10:00.484" level="INFO">${text} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.464" endtime="20230803 13:10:00.484"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.484" level="INFO">${new data} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.484" endtime="20230803 13:10:00.484"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.484" endtime="20230803 13:10:00.485"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.464" endtime="20230803 13:10:00.485"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:00.344" endtime="20230803 13:10:00.485"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.486" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.485" endtime="20230803 13:10:00.486"/>
+</kw>
+<msg timestamp="20230803 13:10:00.486" level="INFO">${begin} = ['Smith', 'Bach', 'Doe', 'Conway']</msg>
+<status status="PASS" starttime="20230803 13:10:00.320" endtime="20230803 13:10:00.486"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${begin}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230803 13:10:00.487" level="INFO">['Smith', 'Bach', 'Doe', 'Conway']</msg>
+<status status="PASS" starttime="20230803 13:10:00.486" endtime="20230803 13:10:00.487"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${begin}</var>
+<arg>${begin}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.487" level="INFO">${begin} = ['Smith', 'Bach', 'Doe', 'Conway']</msg>
+<msg timestamp="20230803 13:10:00.487" level="INFO">${begin} = None</msg>
+<status status="PASS" starttime="20230803 13:10:00.487" endtime="20230803 13:10:00.487"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.488" endtime="20230803 13:10:00.523"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table asc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.531" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.524" endtime="20230803 13:10:00.531"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:00.532" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:00.531" endtime="20230803 13:10:00.532"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.554" level="INFO">Text: 'Bach'</msg>
+<msg timestamp="20230803 13:10:00.555" level="INFO">${text} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.532" endtime="20230803 13:10:00.555"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.556" level="INFO">${new data} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.555" endtime="20230803 13:10:00.556"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.556" endtime="20230803 13:10:00.557"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.532" endtime="20230803 13:10:00.557"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.580" level="INFO">Text: 'Conway'</msg>
+<msg timestamp="20230803 13:10:00.580" level="INFO">${text} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.557" endtime="20230803 13:10:00.580"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.581" level="INFO">${new data} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.581" endtime="20230803 13:10:00.581"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.581" endtime="20230803 13:10:00.582"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.557" endtime="20230803 13:10:00.582"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.629" level="INFO">Text: 'Doe'</msg>
+<msg timestamp="20230803 13:10:00.629" level="INFO">${text} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.582" endtime="20230803 13:10:00.629"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.630" level="INFO">${new data} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.630" endtime="20230803 13:10:00.630"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.631" endtime="20230803 13:10:00.631"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.582" endtime="20230803 13:10:00.631"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.698" level="INFO">Text: 'Smith'</msg>
+<msg timestamp="20230803 13:10:00.698" level="INFO">${text} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.632" endtime="20230803 13:10:00.698"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.699" level="INFO">${new data} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.698" endtime="20230803 13:10:00.699"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.699" endtime="20230803 13:10:00.700"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.631" endtime="20230803 13:10:00.700"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:00.532" endtime="20230803 13:10:00.700"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.701" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.701" endtime="20230803 13:10:00.701"/>
+</kw>
+<msg timestamp="20230803 13:10:00.702" level="INFO">${table asc} = ['Bach', 'Conway', 'Doe', 'Smith']</msg>
+<status status="PASS" starttime="20230803 13:10:00.523" endtime="20230803 13:10:00.702"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table asc}</var>
+<arg>${table asc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.702" level="INFO">${table asc} = ['Bach', 'Conway', 'Doe', 'Smith']</msg>
+<msg timestamp="20230803 13:10:00.703" level="INFO">${table asc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:00.702" endtime="20230803 13:10:00.703"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.703" endtime="20230803 13:10:00.737"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table desc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.745" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.737" endtime="20230803 13:10:00.745"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:00.746" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:00.745" endtime="20230803 13:10:00.746"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.767" level="INFO">Text: 'Smith'</msg>
+<msg timestamp="20230803 13:10:00.767" level="INFO">${text} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.747" endtime="20230803 13:10:00.767"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.768" level="INFO">${new data} = Smith</msg>
+<status status="PASS" starttime="20230803 13:10:00.768" endtime="20230803 13:10:00.768"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.768" endtime="20230803 13:10:00.769"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.746" endtime="20230803 13:10:00.769"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.787" level="INFO">Text: 'Doe'</msg>
+<msg timestamp="20230803 13:10:00.787" level="INFO">${text} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.769" endtime="20230803 13:10:00.787"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.788" level="INFO">${new data} = Doe</msg>
+<status status="PASS" starttime="20230803 13:10:00.787" endtime="20230803 13:10:00.788"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.788" endtime="20230803 13:10:00.788"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.769" endtime="20230803 13:10:00.788"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.806" level="INFO">Text: 'Conway'</msg>
+<msg timestamp="20230803 13:10:00.807" level="INFO">${text} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.789" endtime="20230803 13:10:00.807"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.807" level="INFO">${new data} = Conway</msg>
+<status status="PASS" starttime="20230803 13:10:00.807" endtime="20230803 13:10:00.807"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.807" endtime="20230803 13:10:00.808"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.788" endtime="20230803 13:10:00.808"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:00.827" level="INFO">Text: 'Bach'</msg>
+<msg timestamp="20230803 13:10:00.827" level="INFO">${text} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.809" endtime="20230803 13:10:00.827"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:00.827" level="INFO">${new data} = Bach</msg>
+<status status="PASS" starttime="20230803 13:10:00.827" endtime="20230803 13:10:00.827"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:00.828" endtime="20230803 13:10:00.828"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.808" endtime="20230803 13:10:00.828"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:00.746" endtime="20230803 13:10:00.828"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.829" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:00.828" endtime="20230803 13:10:00.829"/>
+</kw>
+<msg timestamp="20230803 13:10:00.829" level="INFO">${table desc} = ['Smith', 'Doe', 'Conway', 'Bach']</msg>
+<status status="PASS" starttime="20230803 13:10:00.737" endtime="20230803 13:10:00.829"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table desc}</var>
+<arg>${table desc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:00.829" level="INFO">${table desc} = ['Smith', 'Doe', 'Conway', 'Bach']</msg>
+<msg timestamp="20230803 13:10:00.829" level="INFO">${table desc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:00.829" endtime="20230803 13:10:00.829"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.318" endtime="20230803 13:10:00.829"/>
+</kw>
+<kw name="Validate Data" library="common_ui">
+<kw name="Sort List" library="Collections">
+<arg>${begin}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:00.831" endtime="20230803 13:10:00.831"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list asc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:00.832" level="INFO">${list asc} = ['Bach', 'Conway', 'Doe', 'Smith']</msg>
+<status status="PASS" starttime="20230803 13:10:00.831" endtime="20230803 13:10:00.832"/>
+</kw>
+<kw name="Reverse List" library="Collections">
+<arg>${begin}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:00.832" endtime="20230803 13:10:00.832"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list desc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:00.833" level="INFO">${list desc} = ['Smith', 'Doe', 'Conway', 'Bach']</msg>
+<status status="PASS" starttime="20230803 13:10:00.832" endtime="20230803 13:10:00.833"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list asc}</arg>
+<arg>${table asc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:00.833" endtime="20230803 13:10:00.834"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list desc}</arg>
+<arg>${table desc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:00.834" endtime="20230803 13:10:00.835"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.830" endtime="20230803 13:10:00.835"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:55.543" endtime="20230803 13:10:00.836"/>
+</test>
+<test id="s1-t5" name="test_automate_005 :: Sort Data Tables Sort Table1 Column First Name" line="28">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:10:00.899" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:10:00.902" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:10:00.902" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:10:00.899" endtime="20230803 13:10:00.902"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:10:05.250" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:10:05.251" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:10:00.903" endtime="20230803 13:10:05.251"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:10:05.253" endtime="20230803 13:10:05.254"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:10:05.255" endtime="20230803 13:10:05.257"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.898" endtime="20230803 13:10:05.258"/>
+</kw>
+<kw name="Go To Sort Data Table" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="Sortable Data Tables"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:05.263" endtime="20230803 13:10:05.867"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h3[text()="Data Tables"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:10:06.049" level="INFO">Waited for Element with selector //h3[text()="Data Tables"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:10:05.868" endtime="20230803 13:10:06.049"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:05.260" endtime="20230803 13:10:06.050"/>
+</kw>
+<kw name="Sort Data" library="common_ui">
+<arg>2</arg>
+<arg>table1</arg>
+<kw name="Get Column" library="common_ui">
+<var>${begin}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.066" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.054" endtime="20230803 13:10:06.067"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:06.068" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:06.067" endtime="20230803 13:10:06.068"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.139" level="INFO">Text: 'John'</msg>
+<msg timestamp="20230803 13:10:06.139" level="INFO">${text} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.071" endtime="20230803 13:10:06.139"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.140" level="INFO">${new data} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.140" endtime="20230803 13:10:06.140"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.141" endtime="20230803 13:10:06.141"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.070" endtime="20230803 13:10:06.141"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.177" level="INFO">Text: 'Frank'</msg>
+<msg timestamp="20230803 13:10:06.177" level="INFO">${text} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.142" endtime="20230803 13:10:06.177"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.178" level="INFO">${new data} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.177" endtime="20230803 13:10:06.178"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.178" endtime="20230803 13:10:06.180"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.142" endtime="20230803 13:10:06.180"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.211" level="INFO">Text: 'Jason'</msg>
+<msg timestamp="20230803 13:10:06.211" level="INFO">${text} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.181" endtime="20230803 13:10:06.211"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.214" level="INFO">${new data} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.213" endtime="20230803 13:10:06.214"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.214" endtime="20230803 13:10:06.215"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.181" endtime="20230803 13:10:06.215"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.255" level="INFO">Text: 'Tim'</msg>
+<msg timestamp="20230803 13:10:06.255" level="INFO">${text} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.215" endtime="20230803 13:10:06.255"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.256" level="INFO">${new data} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.255" endtime="20230803 13:10:06.256"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.256" endtime="20230803 13:10:06.257"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.215" endtime="20230803 13:10:06.257"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:06.069" endtime="20230803 13:10:06.257"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.258" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.258" endtime="20230803 13:10:06.258"/>
+</kw>
+<msg timestamp="20230803 13:10:06.259" level="INFO">${begin} = ['John', 'Frank', 'Jason', 'Tim']</msg>
+<status status="PASS" starttime="20230803 13:10:06.052" endtime="20230803 13:10:06.259"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${begin}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230803 13:10:06.259" level="INFO">['John', 'Frank', 'Jason', 'Tim']</msg>
+<status status="PASS" starttime="20230803 13:10:06.259" endtime="20230803 13:10:06.260"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${begin}</var>
+<arg>${begin}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.261" level="INFO">${begin} = ['John', 'Frank', 'Jason', 'Tim']</msg>
+<msg timestamp="20230803 13:10:06.262" level="INFO">${begin} = None</msg>
+<status status="PASS" starttime="20230803 13:10:06.260" endtime="20230803 13:10:06.262"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.263" endtime="20230803 13:10:06.310"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table asc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.318" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.311" endtime="20230803 13:10:06.318"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:06.318" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:06.318" endtime="20230803 13:10:06.318"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.349" level="INFO">Text: 'Frank'</msg>
+<msg timestamp="20230803 13:10:06.349" level="INFO">${text} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.319" endtime="20230803 13:10:06.349"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.350" level="INFO">${new data} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.349" endtime="20230803 13:10:06.350"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.350" endtime="20230803 13:10:06.350"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.319" endtime="20230803 13:10:06.350"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.379" level="INFO">Text: 'Jason'</msg>
+<msg timestamp="20230803 13:10:06.380" level="INFO">${text} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.351" endtime="20230803 13:10:06.380"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.381" level="INFO">${new data} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.380" endtime="20230803 13:10:06.381"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.381" endtime="20230803 13:10:06.382"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.351" endtime="20230803 13:10:06.382"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.407" level="INFO">Text: 'John'</msg>
+<msg timestamp="20230803 13:10:06.407" level="INFO">${text} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.382" endtime="20230803 13:10:06.407"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.408" level="INFO">${new data} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.408" endtime="20230803 13:10:06.408"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.408" endtime="20230803 13:10:06.409"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.382" endtime="20230803 13:10:06.409"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.430" level="INFO">Text: 'Tim'</msg>
+<msg timestamp="20230803 13:10:06.430" level="INFO">${text} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.409" endtime="20230803 13:10:06.430"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.431" level="INFO">${new data} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.430" endtime="20230803 13:10:06.431"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.431" endtime="20230803 13:10:06.431"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.409" endtime="20230803 13:10:06.431"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:06.318" endtime="20230803 13:10:06.432"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.432" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.432" endtime="20230803 13:10:06.432"/>
+</kw>
+<msg timestamp="20230803 13:10:06.432" level="INFO">${table asc} = ['Frank', 'Jason', 'John', 'Tim']</msg>
+<status status="PASS" starttime="20230803 13:10:06.310" endtime="20230803 13:10:06.433"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table asc}</var>
+<arg>${table asc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.433" level="INFO">${table asc} = ['Frank', 'Jason', 'John', 'Tim']</msg>
+<msg timestamp="20230803 13:10:06.433" level="INFO">${table asc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:06.433" endtime="20230803 13:10:06.433"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.434" endtime="20230803 13:10:06.483"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table desc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.489" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.484" endtime="20230803 13:10:06.489"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:06.490" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:06.489" endtime="20230803 13:10:06.490"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.512" level="INFO">Text: 'Tim'</msg>
+<msg timestamp="20230803 13:10:06.512" level="INFO">${text} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.490" endtime="20230803 13:10:06.512"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.513" level="INFO">${new data} = Tim</msg>
+<status status="PASS" starttime="20230803 13:10:06.512" endtime="20230803 13:10:06.513"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.513" endtime="20230803 13:10:06.513"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.490" endtime="20230803 13:10:06.513"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.535" level="INFO">Text: 'John'</msg>
+<msg timestamp="20230803 13:10:06.535" level="INFO">${text} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.514" endtime="20230803 13:10:06.535"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.536" level="INFO">${new data} = John</msg>
+<status status="PASS" starttime="20230803 13:10:06.535" endtime="20230803 13:10:06.536"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.536" endtime="20230803 13:10:06.536"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.514" endtime="20230803 13:10:06.537"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.561" level="INFO">Text: 'Jason'</msg>
+<msg timestamp="20230803 13:10:06.561" level="INFO">${text} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.537" endtime="20230803 13:10:06.561"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.562" level="INFO">${new data} = Jason</msg>
+<status status="PASS" starttime="20230803 13:10:06.562" endtime="20230803 13:10:06.562"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.562" endtime="20230803 13:10:06.563"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.537" endtime="20230803 13:10:06.563"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:06.585" level="INFO">Text: 'Frank'</msg>
+<msg timestamp="20230803 13:10:06.585" level="INFO">${text} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.563" endtime="20230803 13:10:06.585"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:06.586" level="INFO">${new data} = Frank</msg>
+<status status="PASS" starttime="20230803 13:10:06.586" endtime="20230803 13:10:06.586"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:06.587" endtime="20230803 13:10:06.587"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.563" endtime="20230803 13:10:06.587"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:06.490" endtime="20230803 13:10:06.587"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.588" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:06.587" endtime="20230803 13:10:06.588"/>
+</kw>
+<msg timestamp="20230803 13:10:06.588" level="INFO">${table desc} = ['Tim', 'John', 'Jason', 'Frank']</msg>
+<status status="PASS" starttime="20230803 13:10:06.483" endtime="20230803 13:10:06.588"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table desc}</var>
+<arg>${table desc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:06.589" level="INFO">${table desc} = ['Tim', 'John', 'Jason', 'Frank']</msg>
+<msg timestamp="20230803 13:10:06.589" level="INFO">${table desc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:06.588" endtime="20230803 13:10:06.589"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.051" endtime="20230803 13:10:06.589"/>
+</kw>
+<kw name="Validate Data" library="common_ui">
+<kw name="Sort List" library="Collections">
+<arg>${begin}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:06.590" endtime="20230803 13:10:06.591"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list asc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:06.592" level="INFO">${list asc} = ['Frank', 'Jason', 'John', 'Tim']</msg>
+<status status="PASS" starttime="20230803 13:10:06.592" endtime="20230803 13:10:06.592"/>
+</kw>
+<kw name="Reverse List" library="Collections">
+<arg>${begin}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:06.592" endtime="20230803 13:10:06.593"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list desc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:06.594" level="INFO">${list desc} = ['Tim', 'John', 'Jason', 'Frank']</msg>
+<status status="PASS" starttime="20230803 13:10:06.593" endtime="20230803 13:10:06.594"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list asc}</arg>
+<arg>${table asc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:06.595" endtime="20230803 13:10:06.595"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list desc}</arg>
+<arg>${table desc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:06.596" endtime="20230803 13:10:06.596"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.590" endtime="20230803 13:10:06.596"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:00.894" endtime="20230803 13:10:06.597"/>
+</test>
+<test id="s1-t6" name="test_automate_006 :: Sort Data Tables Sort Table1 Column Email" line="33">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:10:06.685" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:10:06.689" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:10:06.689" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:10:06.684" endtime="20230803 13:10:06.690"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:10:11.005" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:10:11.005" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:10:06.690" endtime="20230803 13:10:11.006"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:10:11.007" endtime="20230803 13:10:11.009"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:10:11.010" endtime="20230803 13:10:11.011"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.683" endtime="20230803 13:10:11.012"/>
+</kw>
+<kw name="Go To Sort Data Table" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="Sortable Data Tables"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:11.014" endtime="20230803 13:10:11.643"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h3[text()="Data Tables"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:10:11.853" level="INFO">Waited for Element with selector //h3[text()="Data Tables"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:10:11.644" endtime="20230803 13:10:11.854"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.013" endtime="20230803 13:10:11.854"/>
+</kw>
+<kw name="Sort Data" library="common_ui">
+<arg>3</arg>
+<arg>table1</arg>
+<kw name="Get Column" library="common_ui">
+<var>${begin}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:11.878" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:11.859" endtime="20230803 13:10:11.878"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:11.879" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:11.879" endtime="20230803 13:10:11.879"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:11.927" level="INFO">Text: 'jsmith@gmail.com'</msg>
+<msg timestamp="20230803 13:10:11.927" level="INFO">${text} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.883" endtime="20230803 13:10:11.927"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:11.928" level="INFO">${new data} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.927" endtime="20230803 13:10:11.928"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:11.928" endtime="20230803 13:10:11.928"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.882" endtime="20230803 13:10:11.928"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:11.964" level="INFO">Text: 'fbach@yahoo.com'</msg>
+<msg timestamp="20230803 13:10:11.964" level="INFO">${text} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.929" endtime="20230803 13:10:11.964"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:11.966" level="INFO">${new data} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.965" endtime="20230803 13:10:11.966"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:11.966" endtime="20230803 13:10:11.967"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.929" endtime="20230803 13:10:11.967"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:11.991" level="INFO">Text: 'jdoe@hotmail.com'</msg>
+<msg timestamp="20230803 13:10:11.991" level="INFO">${text} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.968" endtime="20230803 13:10:11.991"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:11.992" level="INFO">${new data} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:11.991" endtime="20230803 13:10:11.992"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:11.992" endtime="20230803 13:10:11.992"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.967" endtime="20230803 13:10:11.992"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.011" level="INFO">Text: 'tconway@earthlink.net'</msg>
+<msg timestamp="20230803 13:10:12.011" level="INFO">${text} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:11.993" endtime="20230803 13:10:12.011"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.011" level="INFO">${new data} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:12.011" endtime="20230803 13:10:12.012"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.012" endtime="20230803 13:10:12.012"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.993" endtime="20230803 13:10:12.012"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:11.880" endtime="20230803 13:10:12.012"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.013" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:12.012" endtime="20230803 13:10:12.013"/>
+</kw>
+<msg timestamp="20230803 13:10:12.013" level="INFO">${begin} = ['jsmith@gmail.com', 'fbach@yahoo.com', 'jdoe@hotmail.com', 'tconway@earthlink.net']</msg>
+<status status="PASS" starttime="20230803 13:10:11.858" endtime="20230803 13:10:12.013"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${begin}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230803 13:10:12.014" level="INFO">['jsmith@gmail.com', 'fbach@yahoo.com', 'jdoe@hotmail.com', 'tconway@earthlink.net']</msg>
+<status status="PASS" starttime="20230803 13:10:12.013" endtime="20230803 13:10:12.014"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${begin}</var>
+<arg>${begin}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.015" level="INFO">${begin} = ['jsmith@gmail.com', 'fbach@yahoo.com', 'jdoe@hotmail.com', 'tconway@earthlink.net']</msg>
+<msg timestamp="20230803 13:10:12.015" level="INFO">${begin} = None</msg>
+<status status="PASS" starttime="20230803 13:10:12.015" endtime="20230803 13:10:12.015"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.015" endtime="20230803 13:10:12.056"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table asc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.064" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:12.057" endtime="20230803 13:10:12.064"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:12.065" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:12.065" endtime="20230803 13:10:12.065"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.083" level="INFO">Text: 'fbach@yahoo.com'</msg>
+<msg timestamp="20230803 13:10:12.084" level="INFO">${text} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.066" endtime="20230803 13:10:12.084"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.084" level="INFO">${new data} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.084" endtime="20230803 13:10:12.084"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.084" endtime="20230803 13:10:12.085"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.065" endtime="20230803 13:10:12.085"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.103" level="INFO">Text: 'jdoe@hotmail.com'</msg>
+<msg timestamp="20230803 13:10:12.103" level="INFO">${text} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.085" endtime="20230803 13:10:12.103"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.104" level="INFO">${new data} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.103" endtime="20230803 13:10:12.104"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.104" endtime="20230803 13:10:12.104"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.085" endtime="20230803 13:10:12.104"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.121" level="INFO">Text: 'jsmith@gmail.com'</msg>
+<msg timestamp="20230803 13:10:12.121" level="INFO">${text} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.105" endtime="20230803 13:10:12.122"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.122" level="INFO">${new data} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.122" endtime="20230803 13:10:12.122"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.122" endtime="20230803 13:10:12.123"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.105" endtime="20230803 13:10:12.123"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.140" level="INFO">Text: 'tconway@earthlink.net'</msg>
+<msg timestamp="20230803 13:10:12.140" level="INFO">${text} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:12.123" endtime="20230803 13:10:12.140"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.141" level="INFO">${new data} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:12.140" endtime="20230803 13:10:12.141"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.141" endtime="20230803 13:10:12.141"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.123" endtime="20230803 13:10:12.141"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:12.065" endtime="20230803 13:10:12.141"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.142" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:12.142" endtime="20230803 13:10:12.142"/>
+</kw>
+<msg timestamp="20230803 13:10:12.142" level="INFO">${table asc} = ['fbach@yahoo.com', 'jdoe@hotmail.com', 'jsmith@gmail.com', 'tconway@earthlink.net']</msg>
+<status status="PASS" starttime="20230803 13:10:12.056" endtime="20230803 13:10:12.142"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table asc}</var>
+<arg>${table asc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.143" level="INFO">${table asc} = ['fbach@yahoo.com', 'jdoe@hotmail.com', 'jsmith@gmail.com', 'tconway@earthlink.net']</msg>
+<msg timestamp="20230803 13:10:12.143" level="INFO">${table asc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:12.142" endtime="20230803 13:10:12.143"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.143" endtime="20230803 13:10:12.168"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table desc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.177" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:12.169" endtime="20230803 13:10:12.177"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:12.177" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:12.177" endtime="20230803 13:10:12.177"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.198" level="INFO">Text: 'tconway@earthlink.net'</msg>
+<msg timestamp="20230803 13:10:12.198" level="INFO">${text} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:12.178" endtime="20230803 13:10:12.198"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.199" level="INFO">${new data} = tconway@earthlink.net</msg>
+<status status="PASS" starttime="20230803 13:10:12.199" endtime="20230803 13:10:12.200"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.200" endtime="20230803 13:10:12.200"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.178" endtime="20230803 13:10:12.200"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.220" level="INFO">Text: 'jsmith@gmail.com'</msg>
+<msg timestamp="20230803 13:10:12.220" level="INFO">${text} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.201" endtime="20230803 13:10:12.220"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.221" level="INFO">${new data} = jsmith@gmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.220" endtime="20230803 13:10:12.221"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.221" endtime="20230803 13:10:12.221"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.200" endtime="20230803 13:10:12.221"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.238" level="INFO">Text: 'jdoe@hotmail.com'</msg>
+<msg timestamp="20230803 13:10:12.238" level="INFO">${text} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.222" endtime="20230803 13:10:12.238"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.239" level="INFO">${new data} = jdoe@hotmail.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.239" endtime="20230803 13:10:12.239"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.239" endtime="20230803 13:10:12.240"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.221" endtime="20230803 13:10:12.240"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:12.257" level="INFO">Text: 'fbach@yahoo.com'</msg>
+<msg timestamp="20230803 13:10:12.257" level="INFO">${text} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.240" endtime="20230803 13:10:12.257"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:12.258" level="INFO">${new data} = fbach@yahoo.com</msg>
+<status status="PASS" starttime="20230803 13:10:12.257" endtime="20230803 13:10:12.258"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:12.258" endtime="20230803 13:10:12.258"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.240" endtime="20230803 13:10:12.258"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:12.177" endtime="20230803 13:10:12.258"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.259" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:12.259" endtime="20230803 13:10:12.259"/>
+</kw>
+<msg timestamp="20230803 13:10:12.259" level="INFO">${table desc} = ['tconway@earthlink.net', 'jsmith@gmail.com', 'jdoe@hotmail.com', 'fbach@yahoo.com']</msg>
+<status status="PASS" starttime="20230803 13:10:12.168" endtime="20230803 13:10:12.259"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table desc}</var>
+<arg>${table desc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:12.260" level="INFO">${table desc} = ['tconway@earthlink.net', 'jsmith@gmail.com', 'jdoe@hotmail.com', 'fbach@yahoo.com']</msg>
+<msg timestamp="20230803 13:10:12.260" level="INFO">${table desc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:12.259" endtime="20230803 13:10:12.260"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:11.856" endtime="20230803 13:10:12.260"/>
+</kw>
+<kw name="Validate Data" library="common_ui">
+<kw name="Sort List" library="Collections">
+<arg>${begin}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:12.261" endtime="20230803 13:10:12.262"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list asc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:12.262" level="INFO">${list asc} = ['fbach@yahoo.com', 'jdoe@hotmail.com', 'jsmith@gmail.com', 'tconway@earthlink.net']</msg>
+<status status="PASS" starttime="20230803 13:10:12.262" endtime="20230803 13:10:12.262"/>
+</kw>
+<kw name="Reverse List" library="Collections">
+<arg>${begin}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:12.262" endtime="20230803 13:10:12.263"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list desc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:12.264" level="INFO">${list desc} = ['tconway@earthlink.net', 'jsmith@gmail.com', 'jdoe@hotmail.com', 'fbach@yahoo.com']</msg>
+<status status="PASS" starttime="20230803 13:10:12.263" endtime="20230803 13:10:12.264"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list asc}</arg>
+<arg>${table asc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:12.264" endtime="20230803 13:10:12.264"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list desc}</arg>
+<arg>${table desc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:12.265" endtime="20230803 13:10:12.265"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.261" endtime="20230803 13:10:12.265"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:06.678" endtime="20230803 13:10:12.266"/>
+</test>
+<test id="s1-t7" name="test_automate_007 :: Sort Data Tables Sort Table1 Column Web Site" line="38">
+<kw name="New Browser for Test" library="common_ui" type="SETUP">
+<kw name="New Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230803 13:10:12.327" level="INFO">Switching browser to browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<msg timestamp="20230803 13:10:12.329" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20230803 13:10:12.330" level="INFO">Reusing existing browser with id: browser=a60004e4-a72f-4275-9df7-cdc2953b6985</msg>
+<status status="PASS" starttime="20230803 13:10:12.327" endtime="20230803 13:10:12.330"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${Test_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230803 13:10:16.861" level="INFO">Successfully initialized new page object and opened url: https://the-internet.herokuapp.com/</msg>
+<msg timestamp="20230803 13:10:16.861" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230803 13:10:12.331" endtime="20230803 13:10:16.862"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${Timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" starttime="20230803 13:10:16.863" endtime="20230803 13:10:16.865"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>&gt;&gt; Test on ${Test_URL} &lt;&lt;</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230803 13:10:16.866" endtime="20230803 13:10:16.868"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.326" endtime="20230803 13:10:16.870"/>
+</kw>
+<kw name="Go To Sort Data Table" library="common_ui">
+<kw name="Click" library="Browser">
+<arg>//a[text()="Sortable Data Tables"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:16.875" endtime="20230803 13:10:17.486"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//h3[text()="Data Tables"]</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230803 13:10:17.677" level="INFO">Waited for Element with selector //h3[text()="Data Tables"] at state visible</msg>
+<status status="PASS" starttime="20230803 13:10:17.487" endtime="20230803 13:10:17.677"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:16.872" endtime="20230803 13:10:17.678"/>
+</kw>
+<kw name="Sort Data" library="common_ui">
+<arg>5</arg>
+<arg>table1</arg>
+<kw name="Get Column" library="common_ui">
+<var>${begin}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.703" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:17.682" endtime="20230803 13:10:17.703"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:17.705" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:17.704" endtime="20230803 13:10:17.705"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.755" level="INFO">Text: 'http://www.jsmith.com'</msg>
+<msg timestamp="20230803 13:10:17.755" level="INFO">${text} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.707" endtime="20230803 13:10:17.755"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.756" level="INFO">${new data} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.755" endtime="20230803 13:10:17.756"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.756" endtime="20230803 13:10:17.756"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.707" endtime="20230803 13:10:17.757"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.783" level="INFO">Text: 'http://www.frank.com'</msg>
+<msg timestamp="20230803 13:10:17.783" level="INFO">${text} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.757" endtime="20230803 13:10:17.783"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.784" level="INFO">${new data} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.784" endtime="20230803 13:10:17.784"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.784" endtime="20230803 13:10:17.784"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.757" endtime="20230803 13:10:17.785"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.808" level="INFO">Text: 'http://www.jdoe.com'</msg>
+<msg timestamp="20230803 13:10:17.808" level="INFO">${text} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.785" endtime="20230803 13:10:17.808"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.809" level="INFO">${new data} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.808" endtime="20230803 13:10:17.809"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.809" endtime="20230803 13:10:17.809"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.785" endtime="20230803 13:10:17.809"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.831" level="INFO">Text: 'http://www.timconway.com'</msg>
+<msg timestamp="20230803 13:10:17.831" level="INFO">${text} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.810" endtime="20230803 13:10:17.831"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.832" level="INFO">${new data} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.832" endtime="20230803 13:10:17.832"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.832" endtime="20230803 13:10:17.832"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.810" endtime="20230803 13:10:17.833"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:17.706" endtime="20230803 13:10:17.833"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:17.834" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:17.834" endtime="20230803 13:10:17.834"/>
+</kw>
+<msg timestamp="20230803 13:10:17.834" level="INFO">${begin} = ['http://www.jsmith.com', 'http://www.frank.com', 'http://www.jdoe.com', 'http://www.timconway.com']</msg>
+<status status="PASS" starttime="20230803 13:10:17.680" endtime="20230803 13:10:17.834"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${begin}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230803 13:10:17.835" level="INFO">['http://www.jsmith.com', 'http://www.frank.com', 'http://www.jdoe.com', 'http://www.timconway.com']</msg>
+<status status="PASS" starttime="20230803 13:10:17.834" endtime="20230803 13:10:17.835"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${begin}</var>
+<arg>${begin}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:17.836" level="INFO">${begin} = ['http://www.jsmith.com', 'http://www.frank.com', 'http://www.jdoe.com', 'http://www.timconway.com']</msg>
+<msg timestamp="20230803 13:10:17.836" level="INFO">${begin} = None</msg>
+<status status="PASS" starttime="20230803 13:10:17.835" endtime="20230803 13:10:17.836"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.836" endtime="20230803 13:10:17.871"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table asc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.879" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:17.872" endtime="20230803 13:10:17.879"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:17.879" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:17.879" endtime="20230803 13:10:17.879"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.900" level="INFO">Text: 'http://www.frank.com'</msg>
+<msg timestamp="20230803 13:10:17.900" level="INFO">${text} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.880" endtime="20230803 13:10:17.900"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.901" level="INFO">${new data} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.901" endtime="20230803 13:10:17.901"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.901" endtime="20230803 13:10:17.901"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.880" endtime="20230803 13:10:17.902"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.922" level="INFO">Text: 'http://www.jdoe.com'</msg>
+<msg timestamp="20230803 13:10:17.923" level="INFO">${text} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.902" endtime="20230803 13:10:17.923"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.923" level="INFO">${new data} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.923" endtime="20230803 13:10:17.923"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.924" endtime="20230803 13:10:17.924"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.902" endtime="20230803 13:10:17.924"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.943" level="INFO">Text: 'http://www.jsmith.com'</msg>
+<msg timestamp="20230803 13:10:17.943" level="INFO">${text} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.924" endtime="20230803 13:10:17.943"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.944" level="INFO">${new data} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.943" endtime="20230803 13:10:17.944"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.944" endtime="20230803 13:10:17.944"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.924" endtime="20230803 13:10:17.944"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:17.970" level="INFO">Text: 'http://www.timconway.com'</msg>
+<msg timestamp="20230803 13:10:17.970" level="INFO">${text} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.945" endtime="20230803 13:10:17.970"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:17.971" level="INFO">${new data} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:17.970" endtime="20230803 13:10:17.971"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.971" endtime="20230803 13:10:17.971"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.945" endtime="20230803 13:10:17.971"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:17.879" endtime="20230803 13:10:17.972"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:17.972" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:17.972" endtime="20230803 13:10:17.972"/>
+</kw>
+<msg timestamp="20230803 13:10:17.973" level="INFO">${table asc} = ['http://www.frank.com', 'http://www.jdoe.com', 'http://www.jsmith.com', 'http://www.timconway.com']</msg>
+<status status="PASS" starttime="20230803 13:10:17.871" endtime="20230803 13:10:17.973"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table asc}</var>
+<arg>${table asc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:17.973" level="INFO">${table asc} = ['http://www.frank.com', 'http://www.jdoe.com', 'http://www.jsmith.com', 'http://www.timconway.com']</msg>
+<msg timestamp="20230803 13:10:17.973" level="INFO">${table asc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:17.973" endtime="20230803 13:10:17.973"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id="${table name}"]/thead/tr/th[${col}]/span</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230803 13:10:17.974" endtime="20230803 13:10:18.002"/>
+</kw>
+<kw name="Get Column" library="common_ui">
+<var>${table desc}</var>
+<arg>${col}</arg>
+<arg>${table name}</arg>
+<kw name="Get Element Count" library="Browser">
+<var>${row}</var>
+<arg>//*[@id="${table name}"]/tbody/tr</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<msg timestamp="20230803 13:10:18.011" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:18.003" endtime="20230803 13:10:18.011"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${data list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230803 13:10:18.012" level="INFO">${data list} = []</msg>
+<status status="PASS" starttime="20230803 13:10:18.011" endtime="20230803 13:10:18.012"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${row}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:18.031" level="INFO">Text: 'http://www.timconway.com'</msg>
+<msg timestamp="20230803 13:10:18.031" level="INFO">${text} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.012" endtime="20230803 13:10:18.031"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:18.032" level="INFO">${new data} = http://www.timconway.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.031" endtime="20230803 13:10:18.032"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:18.032" endtime="20230803 13:10:18.032"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:18.012" endtime="20230803 13:10:18.033"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:18.052" level="INFO">Text: 'http://www.jsmith.com'</msg>
+<msg timestamp="20230803 13:10:18.053" level="INFO">${text} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.034" endtime="20230803 13:10:18.053"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:18.053" level="INFO">${new data} = http://www.jsmith.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.053" endtime="20230803 13:10:18.053"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:18.053" endtime="20230803 13:10:18.054"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:18.033" endtime="20230803 13:10:18.054"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:18.073" level="INFO">Text: 'http://www.jdoe.com'</msg>
+<msg timestamp="20230803 13:10:18.073" level="INFO">${text} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.054" endtime="20230803 13:10:18.073"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:18.074" level="INFO">${new data} = http://www.jdoe.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.073" endtime="20230803 13:10:18.074"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:18.074" endtime="20230803 13:10:18.074"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:18.054" endtime="20230803 13:10:18.074"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>//*[@id="table1"]/tbody/tr[${index}+1]/td[${Col} ]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230803 13:10:18.093" level="INFO">Text: 'http://www.frank.com'</msg>
+<msg timestamp="20230803 13:10:18.093" level="INFO">${text} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.075" endtime="20230803 13:10:18.093"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${new data}</var>
+<arg>${text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230803 13:10:18.094" level="INFO">${new data} = http://www.frank.com</msg>
+<status status="PASS" starttime="20230803 13:10:18.093" endtime="20230803 13:10:18.094"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${data list}</arg>
+<arg>${new data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230803 13:10:18.094" endtime="20230803 13:10:18.094"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:18.075" endtime="20230803 13:10:18.095"/>
+</iter>
+<status status="PASS" starttime="20230803 13:10:18.012" endtime="20230803 13:10:18.095"/>
+</for>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${row}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:18.095" level="INFO">${row} = 4</msg>
+<status status="PASS" starttime="20230803 13:10:18.095" endtime="20230803 13:10:18.095"/>
+</kw>
+<msg timestamp="20230803 13:10:18.095" level="INFO">${table desc} = ['http://www.timconway.com', 'http://www.jsmith.com', 'http://www.jdoe.com', 'http://www.frank.com']</msg>
+<status status="PASS" starttime="20230803 13:10:18.003" endtime="20230803 13:10:18.096"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<var>${table desc}</var>
+<arg>${table desc}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20230803 13:10:18.096" level="INFO">${table desc} = ['http://www.timconway.com', 'http://www.jsmith.com', 'http://www.jdoe.com', 'http://www.frank.com']</msg>
+<msg timestamp="20230803 13:10:18.096" level="INFO">${table desc} = None</msg>
+<status status="PASS" starttime="20230803 13:10:18.096" endtime="20230803 13:10:18.096"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:17.679" endtime="20230803 13:10:18.096"/>
+</kw>
+<kw name="Validate Data" library="common_ui">
+<kw name="Sort List" library="Collections">
+<arg>${begin}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:18.098" endtime="20230803 13:10:18.098"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list asc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:18.099" level="INFO">${list asc} = ['http://www.frank.com', 'http://www.jdoe.com', 'http://www.jsmith.com', 'http://www.timconway.com']</msg>
+<status status="PASS" starttime="20230803 13:10:18.098" endtime="20230803 13:10:18.099"/>
+</kw>
+<kw name="Reverse List" library="Collections">
+<arg>${begin}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20230803 13:10:18.100" endtime="20230803 13:10:18.100"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${list desc}</var>
+<arg>${begin}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20230803 13:10:18.101" level="INFO">${list desc} = ['http://www.timconway.com', 'http://www.jsmith.com', 'http://www.jdoe.com', 'http://www.frank.com']</msg>
+<status status="PASS" starttime="20230803 13:10:18.100" endtime="20230803 13:10:18.101"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list asc}</arg>
+<arg>${table asc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:18.101" endtime="20230803 13:10:18.102"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list desc}</arg>
+<arg>${table desc}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20230803 13:10:18.102" endtime="20230803 13:10:18.102"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:18.097" endtime="20230803 13:10:18.102"/>
+</kw>
+<status status="PASS" starttime="20230803 13:10:12.323" endtime="20230803 13:10:18.103"/>
+</test>
+<kw name="Close Browser" library="Browser" type="TEARDOWN">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20230803 13:10:18.243" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20230803 13:10:18.164" endtime="20230803 13:10:18.244"/>
+</kw>
+<status status="PASS" starttime="20230803 13:09:31.776" endtime="20230803 13:10:18.244"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Test Automate Ui">Test Automate Ui</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
